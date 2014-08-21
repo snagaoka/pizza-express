@@ -4,12 +4,20 @@
   "description": "an introduction to xhr",
   "main": "server.js",
   "private": true,
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
+    "body-parser": "^1.6.5",
+    "express": "^4.8.5",
+    "jade": "^1.5.0",
+    "method-override": "^2.1.3",
+    "mongoose": "^3.8.15"
   },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": ["rayrfarias@gmail.com", "thgaskell@gmail.com"],
+  "author": [
+    "rayrfarias@gmail.com",
+    "thgaskell@gmail.com"
+  ],
   "license": "ISC"
 }
