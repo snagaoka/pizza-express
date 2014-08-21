@@ -5,6 +5,8 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
 var index = require('./routes/index');
+var orders = require('./routes/orders');
+var generateOrders = require('./routes/generateOrders');
 
 var server = express();
 
@@ -22,5 +24,7 @@ server.use(bodyParser.urlencoded({
 server.use(express.static(path.join(__dirname, 'public')));
 
 server.use('/', index);
+server.use('/orders', orders);
+server.use('/generateOrders', generateOrders);
 
 server.listen(3000, console.log("pizza server enabled!"));
