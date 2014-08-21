@@ -1,14 +1,16 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var placeOrder = require('./../lib/generateOrder');
 var orders = {}
 
+// mongodb URL here
 mongoose.connect('mongodb://bob:nom@ds063809.mongolab.com:63809/pizza-express');
 
 var OrdersSchema = Schema({
-  size: String,
+  sizes: String,
   toppings: {
-    meat: Array,
+    meats: Array,
     veggies: Array
   }
 });
@@ -16,35 +18,18 @@ var OrdersSchema = Schema({
 var Order = mongoose.model('Order', OrdersSchema);
 
 orders.getAllPizzaOrders = function (req, res) {
-  // console.log('start ret');
   Order.find({}, function (err, orders) {
     if (err) {
       console.log("error getting all pizzas", err); return;
     }
-    
     res.send(orders);
-    console.log(orders);
   });
 };
 
 orders.generateOrders = function (req, res) {
-  var newOrder = new Order({
-    size: "small",
-    toppings: {
-      meat: [
-        "Bacon",
-        "Ham"
-      ],
-      veggies: [
-        "Spinach",
-        "Black Olives"
-      ]
-    }
-  });
+  var newOrder = new Order(placeOrder.generate());
 
   newOrder.save();
-  res.send(200);
-
 };
 
 module.exports = orders;
