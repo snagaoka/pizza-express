@@ -9,9 +9,12 @@ router.route('/')
   })
   .post(function (req, res) {
     database.createOrder(req, res);
-  })
+  });
+
+router.route('/:orderId')
   .delete(function (req, res) {
-    res.send("Fucking deleting orders");
+    var orderId = req.param('orderId')
+    database.deleteOrder(orderId, res);
   });
 
 module.exports = router;

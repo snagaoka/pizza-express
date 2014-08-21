@@ -37,10 +37,20 @@ orders.createOrder = function(req, res){
 
   newOrder.save(function (err){
     if (err) {
-      console.log("error@ createOrder", err);
+      console.log("error @ createOrder", err);
       return err;
     }
     res.json(newOrder);
+  });
+};
+
+orders.deleteOrder = function(orderId, res) {
+  Order.findById(orderId, function (err, order){
+    if (err){
+      console.log("error deleting Order by ID", err);
+      return err;
+    }
+    res.send(200);
   });
 };
 
