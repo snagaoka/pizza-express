@@ -8,7 +8,7 @@ var orders = {};
 mongoose.connect('mongodb://bob:nom@ds063809.mongolab.com:63809/pizza-express');
 
 var OrdersSchema = Schema({
-  sizes: String,
+  size: String,
   toppings: {
     meats: Array,
     veggies: Array
@@ -28,7 +28,7 @@ orders.getAllPizzaOrders = function(req, res){
 
 orders.createOrder = function(req, res){
   var newOrder = new Order({
-    sizes: req.param('sizes'),
+    size: req.param('sizes'),
     toppings: {
       meats: req.param('meats'),
       veggies: req.param('veggies')
