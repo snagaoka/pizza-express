@@ -10,19 +10,12 @@ $(function(){
 			
 			for (var i = 0; i < data.length; i++) {
 
-				var eachOrder = $("<li></li>");
+				var eachPizzaSize = data[i].size;
+				var eachPizzaMeatTopping = data[i].toppings.meats;
+				var eachPizzaVeggieTopping = data[i].toppings.veggies;
+				var eachPizza = eachPizzaSize + eachPizzaMeatTopping + eachPizzaVeggieTopping
 
-					eachOrder.append(data[i].size); // show size in order queue
-
-					data[i].toppings.meats.forEach(function(element, index){
-						eachOrder.append(element); // show meats in order queue
-					});
-
-					data[i].toppings.veggies.forEach(function(element, index){
-						eachOrder.append(element); // show meats in order queue
-					});
-
-				orderQueue.append(eachOrder);
+				orderQueue.append("<li>" + eachPizza + "</li>");
 
 			}
 
