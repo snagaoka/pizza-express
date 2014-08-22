@@ -62,4 +62,18 @@ orders.generateOrders = function (req, res) {
   newOrder.save();
 };
 
+var intervalId;
+
+orders.autoGenerateOrders = function (req, res){
+  intervalId = setInterval(function(){
+    var newOrder = new Order(placeOrder.generate());
+
+    newOrder.save();
+  }, 5000);
+};
+
+orders.killAutoGenerateOrders = function (req, res){
+  clearInterval(intervalId);
+};
+
 module.exports = orders;

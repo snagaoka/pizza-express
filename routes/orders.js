@@ -4,15 +4,15 @@ var database = require('./../models/orders');
 
 // Orders Controller
 router.route('/')
-  .get(function (req, res) {
+  .get(function (req, res){
     database.getAllPizzaOrders(req, res);
   })
-  .post(function (req, res) {
+  .post(function (req, res){
     database.createOrder(req, res);
   });
 
 router.route('/:orderId')
-  .delete(function (req, res) {
+  .delete(function (req, res){
     var orderId = req.param('orderId')
     database.deleteOrder(orderId, res);
   });

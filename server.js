@@ -32,6 +32,6 @@ server.use(express.static(path.join(__dirname, 'public')));
 server.use(logger('dev'));
 server.use('/', index);
 server.use('/orders', orders);
-server.use('/generateOrders', generateOrders);
+server.use('/generate', generateOrders);
 
 server.listen(3000, console.log("pizza server enabled!"));
