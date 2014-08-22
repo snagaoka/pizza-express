@@ -3,9 +3,10 @@ var router = express.Router();
 var database = require('./../models/orders');
 
 // Orders Controller
-router.route('/')
+router.route('/:orderAmount')
   .get(function (req, res) {
-    for (var i = 0; i < 20; i++) {
+    var orderAmount = req.param('orderAmount');
+    for (var i = 0; i < orderAmount; i++) {
       database.generateOrders();
     }
 

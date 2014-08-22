@@ -13,8 +13,10 @@ Pizza Express has become popular, so they are hiring some developers to help org
 2. first run `npm install` to get all the dependencies for this project
 3. `nodemon server.js` to start your server
 4. go to `localhost:3000` to make sure it works
-5. go to the `localhost:3000/generateOrders` route to populate your database with some base objects (20 at a time)
+5. go to the `localhost:3000/generateOrders/10` route to populate your database with some base objects (20 at a time)
 6. create a `public/` directory with additional directories for your `stylesheets`, `javascripts`, etc.
+
+`/generateOrders/:number` provide any number in place of `:number` to generate orders to that amount.
 
 ##HTML
 
