@@ -11,81 +11,85 @@ html
         
         h1 Start Your Order
 
-        form(action="/orders", method="POST", enctype="application/x-www-form-urlencoded")
+        form#form(action="/orders", method="POST", enctype="application/x-www-form-urlencoded")
 
           p 
             b Pick a Size
             br
-            input(type='radio', name='size', value='small') 
+            input(type='radio', name='size', value='Small') 
             | Small
             br
-            input(type='radio', name='size', value='medium') 
+            input(type='radio', name='size', value='Medium') 
             | Medium
             br
-            input(type='radio', name='size', value='large') 
+            input(type='radio', name='size', value='Large') 
             | Large
             br
 
           p 
             b Pick Your Meat Toppings
             br
-            input(type='checkbox', name='meats', value='pepperoni')
+            input(type='checkbox', name='toppings.meats[]', value='Pepperoni')
             | Pepperoni
             br
-            input(type='checkbox', name='meats', value='ham')
+            input(type='checkbox', name='toppings.meats[]', value='Ham')
             | Ham
             br
-            input(type='checkbox', name='meats', value='beef toppping')
+            input(type='checkbox', name='toppings.meats[]', value='Beef Toppping')
             | Beef Topping
             br
-            input(type='checkbox', name='meats', value='italian sausage')
+            input(type='checkbox', name='toppings.meats[]', value='Italian Sausage')
             | Italian Sausage
             br
-            input(type='checkbox', name='meats', value='pork toppping')
+            input(type='checkbox', name='toppings.meats[]', value='Pork Toppping')
             | Pork Topping
             br
-            input(type='checkbox', name='meats', value='grilled chicken')
+            input(type='checkbox', name='toppings.meats[]', value='Grilled Chicken')
             | Grilled Chicken
             br
-            input(type='checkbox', name='meats', value='bacon')
+            input(type='checkbox', name='toppings.meats[]', value='Bacon')
             | Bacon
             br
 
           p 
             b Pick Your Vegetable Toppings
             br
-            input(type='checkbox', name='veggies', value='spinach')
+            input(type='checkbox', name='toppings.veggies[]', value='Spinach')
             | Spinach
             br
-            input(type='checkbox', name='veggies', value='green peppers')
+            input(type='checkbox', name='toppings.veggies[]', value='Green Peppers')
             | Green Peppers
             br
-            input(type='checkbox', name='veggies', value='red onions')
+            input(type='checkbox', name='toppings.veggies[]', value='Red Onions')
             | Red Onions
             br
-            input(type='checkbox', name='veggies', value='mushrooms')
+            input(type='checkbox', name='toppings.veggies[]', value='Mushrooms')
             | Mushrooms
             br
-            input(type='checkbox', name='veggies', value='black olives')
+            input(type='checkbox', name='toppings.veggies[]', value='Black Olives')
             | Black Olives
             br
-            input(type='checkbox', name='veggies', value='tomatoes')
+            input(type='checkbox', name='toppings.veggies[]', value='Tomatoes')
             | Tomatoes
             br
-            input(type='checkbox', name='veggies', value='pineapple')
+            input(type='checkbox', name='toppings.veggies[]', value='Pineapple')
             | Pineapple
             br
-            input(type='checkbox', name='veggies', value='jalapenos')
+            input(type='checkbox', name='toppings.veggies[]', value='Jalapenos')
             | Jalapenos
             br
-            input(type='checkbox', name='veggies', value='garlic')
+            input(type='checkbox', name='toppings.veggies[]', value='Garlic')
             | Garlic
             br
           
-        p
-          button Place Your Order
+          p
+            input(type='submit', value='Place Your Order')
 
       .work-header
         h1 Order Queue
-      .order-list
+
+      ul.order-list
         //- orders appear
+
+//- static items (form, work-header) go in HTML, dynamic items (order queue) in JS
+
