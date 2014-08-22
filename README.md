@@ -27,7 +27,9 @@ Pizza Express has become popular, so they are hiring some developers to help org
 
 The only html page, and the only one you can use is the `index` page at the root route `'/'`.
 
-There should be a form on `index` page so that you may submit a new pizza order. The page should NOT refresh when a form is submitted, you must harness the power of AJAX and jQuery to submit the information to the server.
+There should be a form on `index` page so that you may submit a new pizza order. The form must have a way for the User to choose a single size (Small, Medium, or Large). The User should be able to choose any number of Meat and Veggie toppings for the order (look up 'form input array'). There should be a submit button for the form labeled 'Submit Order'.
+
+The page should not refresh when a form is submitted, you must harness the power of AJAX and jQuery to submit the information to the server.
 
 Below the form should be an area which shows all pizza orders in the queue. When this page is hit for the first time, an AJAX call to `/orders` should fire off to retreive all the pizza orders that are in the queue. You must add these orders to the `.order-list` div element.
 
@@ -47,12 +49,15 @@ The server is designed to accept 3 types of responses.
 
 - `/orders`
   - Creates a new order
-  - Returns successful `200` and returns a single JSON object
+  - expects three parameters to be sent, all three fields are required. Client-side Javascript must validate these fields.
+    - `"size"`, `"meats"`, `"veggies"`
+  - Returns successful `200` and returns the new order as a single JSON object
 
 ##DELETE
 
 - `/orders/:orderId`
   - Removes a order from the queue
+  - must have an :orderId
 
 ====
 #Pizza Object

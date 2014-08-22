@@ -8,6 +8,7 @@ router.route('/')
     database.getAllPizzaOrders(req, res);
   })
   .post(function (req, res){
+    // console.log(req.body);
     database.createOrder(req, res);
   });
 
