@@ -1,5 +1,7 @@
 var express = require('express');
+var router = express.Router();
 var path = require('path');
+var logger = require('morgan');
 var jade = require('jade');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
@@ -23,6 +25,11 @@ server.use(bodyParser.urlencoded({
 // set public directory
 server.use(express.static(path.join(__dirname, 'public')));
 
+// server.use(function(req, res, next) {
+//   console.log('%s %s %s', req.method, req.status, req.path);
+//   next();
+// });
+server.use(logger('dev'));
 server.use('/', index);
 server.use('/orders', orders);
 server.use('/generateOrders', generateOrders);
