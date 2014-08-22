@@ -14,8 +14,7 @@ Pizza Express has become popular, so they are hiring some developers to help org
 3. `nodemon server.js` to start your server
 4. go to `localhost:3000` to make sure it works
 5. go to the `localhost:3000/generateOrders` route to populate your database with some base objects (20 at a time)
-
-
+6. create a `public/` directory with additional directories for your `stylesheets`, `javascripts`, etc.
 
 ##HTML
 
