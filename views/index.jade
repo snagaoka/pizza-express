@@ -8,6 +8,83 @@ html
     .container
       .order-form
         //- form to POST a new order to the servers '/orders'
+        
+        h1 Start Your Order
+
+        form(action="/orders", method="POST", enctype="application/x-www-form-urlencoded")
+
+          p 
+            b Pick a Size
+            br
+            input(type='radio', name='size', value='small') 
+            | Small
+            br
+            input(type='radio', name='size', value='medium') 
+            | Medium
+            br
+            input(type='radio', name='size', value='large') 
+            | Large
+            br
+
+          p 
+            b Pick Your Meat Toppings
+            br
+            input(type='checkbox', name='meats', value='pepperoni')
+            | Pepperoni
+            br
+            input(type='checkbox', name='meats', value='ham')
+            | Ham
+            br
+            input(type='checkbox', name='meats', value='beef toppping')
+            | Beef Topping
+            br
+            input(type='checkbox', name='meats', value='italian sausage')
+            | Italian Sausage
+            br
+            input(type='checkbox', name='meats', value='pork toppping')
+            | Pork Topping
+            br
+            input(type='checkbox', name='meats', value='grilled chicken')
+            | Grilled Chicken
+            br
+            input(type='checkbox', name='meats', value='bacon')
+            | Bacon
+            br
+
+          p 
+            b Pick Your Vegetable Toppings
+            br
+            input(type='checkbox', name='veggies', value='spinach')
+            | Spinach
+            br
+            input(type='checkbox', name='veggies', value='green peppers')
+            | Green Peppers
+            br
+            input(type='checkbox', name='veggies', value='red onions')
+            | Red Onions
+            br
+            input(type='checkbox', name='veggies', value='mushrooms')
+            | Mushrooms
+            br
+            input(type='checkbox', name='veggies', value='black olives')
+            | Black Olives
+            br
+            input(type='checkbox', name='veggies', value='tomatoes')
+            | Tomatoes
+            br
+            input(type='checkbox', name='veggies', value='pineapple')
+            | Pineapple
+            br
+            input(type='checkbox', name='veggies', value='jalapenos')
+            | Jalapenos
+            br
+            input(type='checkbox', name='veggies', value='garlic')
+            | Garlic
+            br
+          
+        p
+          button Place Your Order
+
       .work-header
         h1 Order Queue
       .order-list
