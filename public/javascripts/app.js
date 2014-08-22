@@ -33,7 +33,7 @@ $(function(){
 				var eachPizzaMeatTopping = data[i].toppings.meats;
 				var eachPizzaVeggieTopping = data[i].toppings.veggies;
 				var eachPizza = eachPizzaSize + eachPizzaMeatTopping + eachPizzaVeggieTopping
-				orderQueue.append("<li>" + eachPizza + "</li>");
+				orderQueue.prepend("<li>" + eachPizza + "</li>");
 			}
 			// $(".order-list").append();
 		}
