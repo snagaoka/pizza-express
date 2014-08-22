@@ -21,6 +21,7 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({
   extended: true
 }));
+server.use(methodOverride('_method'));
 
 // set public directory
 server.use(express.static(path.join(__dirname, 'public')));
